@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hafidz & Putri Wedding</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+	
+	<style>
+	* { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
+	body { font-family: 'Poppins', sans-serif; background:#fffaf5; color:#444; }
+	#opening { position:fixed; top:0; left:0; width:100%; height:100vh; background: url('https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg') center/cover; z-index:9999; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; transition: 1s ease; }
+	#opening::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(255,250,245,0.85); pointer-events: none; }
+	.opening-box { position:relative; z-index:10; background:rgba(255,255,255,0.75); padding:35px 25px; border-radius:25px; max-width:380px; width:90%; backdrop-filter: blur(8px); box-shadow:0 10px 40px rgba(0,0,0,0.15); }
+	.opening-foto { width:130px; height:130px; border-radius:50%; border:5px solid #bfa76a; margin:0 auto 15px; overflow:hidden; }
+	.opening-foto img { width:100%; height:100%; object-fit:cover; }
+	#opening h3 { font-size:12px; letter-spacing:3px; color:#7a7a7a; }
+	#opening h1 { font-family:'Great Vibes'; font-size:45px; color:#bfa76a; margin:5px 0 10px; }
+	#opening p { color:#555; font-size:14px; }
+	.btn-buka { margin-top:20px; padding:14px 40px; background:linear-gradient(135deg, #bfa76a, #a88f55); color:white; border:none; border-radius:30px; font-size:16px; font-weight:600; cursor:pointer; transition:0.3s; width:100%; box-shadow:0 5px 20px rgba(191,167,106,0.4); position:relative; z-index:11; }
+	.btn-buka:hover { background:#a88f55; transform:translateY(-3px); }
+	section { padding:80px 20px; text-align:center; }
+	.container { max-width:650px; margin:auto; }
+	h2 { font-family:'Great Vibes'; font-size:42px; color:#bfa76a; margin-bottom:25px; }
+	h2 i { margin-right:10px; font-size:28px; }
+	.fade { opacity:0; transform:translateY(40px); transition: all 1s ease; }
+	.fade.show { opacity:1; transform:translateY(0); }
+	.foto-bulat { width:240px; height:240px; border-radius:50%; border:6px solid #bfa76a; margin:20px auto; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.1); }
+	.foto-bulat img { width:100%; height:100%; object-fit:cover; }
+	.nama-mempelai { font-family:'Great Vibes'; font-size:38px; color:#bfa76a; margin-top:15px; }
+	.countdown { display:flex; gap:12px; justify-content:center; margin:25px 0; flex-wrap:wrap; }
+	.count-box { background:white; padding:15px; border-radius:12px; min-width:75px; box-shadow:0 4px 15px rgba(0,0,0,0.08); }
+	.count-box h3 { font-size:26px; color:#bfa76a; font-weight:600; }
+	.gallery { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
+	.gallery img { width:100%; height:200px; object-fit:cover; border-radius:15px; transition:0.4s; }
+	.gallery img:hover { transform:scale(1.05); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+	.gift-box { background:white; padding:25px; border-radius:20px; margin:15px 0; box-shadow:0 5px 20px rgba(0,0,0,0.08); border:1px solid #f0e6d2; }
+	.gift-box h4 { color:#bfa76a; font-size:20px; margin-bottom:10px; }
+	.btn-copy { margin-top:10px; padding:10px 20px; background:#bfa76a; color:white; border:none; border-radius:20px; cursor:pointer; font-size:14px; transition:0.3s; }
+	.btn-copy:hover { background:#a88f55; }
+	.counter { display:flex; gap:12px; justify-content:center; margin:20px auto; max-width:340px; }
+	.counter-box { flex:1; padding:14px; border-radius:12px; color:white; font-weight:600; }
+	.counter-box.hadir { background:#3D9A62; } 
+	.counter-box.tidak { background:#d90a11; }
+	input, textarea, select { width:100%; padding:14px; margin-bottom:12px; border-radius:10px; border:1px solid #ddd; font-family:'Poppins'; }
+	button { width:100%; padding:15px; background:linear-gradient(135deg, #bfa76a, #a88f55); color:white; border:none; border-radius:10px; font-weight:600; cursor:pointer; transition:0.3s; }
+	button:hover { background:#a88f55; }
+	.comment-box { background:white; padding:18px; margin-bottom:12px; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.06); text-align:left; border-left:4px solid #bfa76a; }
+	#music-btn { position:fixed; bottom:20px; right:20px; background:#bfa76a; color:white; width:50px; height:50px; border-radius:50%; border:none; font-size:20px; cursor:pointer; z-index:999; box-shadow:0 4px 15px rgba(0,0,0,0.2); }
+	@media(max-width:600px){ .gallery{grid-template-columns: repeat(2, 1fr);} }
+	</style>
+</head>
+<body>
+
+<audio id="bg-music" loop><source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg"></audio>
+<button id="music-btn" onclick="toggleMusic()"><i class="fa-solid fa-music"></i></button>
+
+<div id="opening">
+	<div class="opening-box">
+	<div class="opening-foto"><img src="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg"></div>
+	<h3>THE WEDDING OF</h3>
+	<h1>Hafidz & Putri</h1>
+	<p>31 . 08 . 2027</p>
+	<p style="margin-top:15px;">Kepada Yth.<br><b id="nama-tamu">Bapak/Ibu/Saudara/i</b></p>
+		<button class="btn-buka" onclick="bukaUndangan()"><i class="fa-solid fa-envelope-open"></i> Buka Undangan</button>
+	</div>
+</div>
+
+<div id="main-content" style="display:none;">
+<section class="fade"><div class="container"><div class="foto-bulat"><img src="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg"></div><h2 class="nama-mempelai">Hafidz & Putri</h2><h2>Assalamu'alaikum</h2><p>"Dan diantara tanda-tanda kebesaran-Nya..." <b>QS. Ar-Rum: 21</b></p></div></section>
+<section class="fade" style="background:#fff;"><div class="container"><h2><i class="fa-solid fa-calendar-days"></i> Save The Date</h2><div class="countdown"><div class="count-box"><h3 id="hari">0</h3><p>Hari</p></div><div class="count-box"><h3 id="jam">0</h3><p>Jam</p></div><div class="count-box"><h3 id="menit">0</h3><p>Menit</p></div><div class="count-box"><h3 id="detik">0</h3><p>Detik</p></div></div><h3>Senin, 31 Agustus 2027</h3><p>Akad: 09.00 WIB<br>Resepsi: 11.00 WIB<br>Rumah Mempelai Wanita</p><a href="https://maps.google.com" target="_blank" style="display:inline-block; margin-top:15px; padding:12px 25px; background:#bfa76a; color:white; border-radius:25px; text-decoration:none;"><i class="fa-solid fa-location-dot"></i> Lihat Lokasi</a></div></section>
+<section class="fade"><div class="container"><h2><i class="fa-solid fa-images"></i> Wedding Gallery</h2><div class="gallery"><a href="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg" class="glightbox"><img src="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg"></a><a href="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg" class="glightbox"><img src="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg"></a><a href="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg" class="glightbox"><img src="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg"></a><a href="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg" class="glightbox"><img src="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg"></a><a href="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg" class="glightbox"><img src="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg"></a><a href="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg" class="glightbox"><img src="https://web.galeriundanganofficial.com/wp-content/uploads/2026/02/Hafidz-Putri-19.jpeg"></a></div></div></section>
+<section class="fade" style="background:#fff;"><div class="container"><h2><i class="fa-solid fa-gift"></i> Wedding Gift</h2><p>Doa restu Anda merupakan karunia yang sangat berarti bagi kami.</p><div class="gift-box"><h4><i class="fa-solid fa-building-columns"></i> Bank BCA</h4><p>a.n Hafidz<br>1234 5678 9010</p><button class="btn-copy" onclick="navigator.clipboard.writeText('123456789010')">Copy No. Rekening</button></div><div class="gift-box"><h4><i class="fa-solid fa-wallet"></i> E-Wallet DANA</h4><p>a.n Putri<br>0812 3456 7890</p><button class="btn-copy" onclick="navigator.clipboard.writeText('081234567890')">Copy No. DANA</button></div></div></section>
+<section class="fade"><div class="container"><h2><i class="fa-solid fa-envelope-open-text"></i> Doa & Ucapan</h2><div class="counter"><div class="counter-box hadir"><h3 id="hadir-count">0</h3><p>Hadir</p></div><div class="counter-box tidak"><h3 id="tidak-hadir-count">0</h3><p>Tidak Hadir</p></div></div><form id="ucapan-form"><input type="text" id="nama" placeholder="Nama Anda" required><textarea id="ucapan" placeholder="Tulis doa dan ucapan..." rows="3" required></textarea><select id="kehadiran" required><option value="">Konfirmasi Kehadiran</option><option value="Hadir">Hadir</option><option value="Tidak Hadir">Tidak Hadir</option></select><button type="submit">Kirim</button></form><div id="list-ucapan" style="margin-top:25px; max-height:400px; overflow-y:auto;"></div></div></section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+const lightbox = GLightbox({ selector: '.glightbox' });
+
+function getNamaTamu() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const nama = urlParams.get('to'); 
+    if (nama) { return decodeURIComponent(nama.replace(/\+/g, ')); } 
+    else { return 'Bapak/Ibu/Saudara/i'; }
+}
+document.getElementById('nama-tamu').innerText = getNamaTamu();
+
+function bukaUndangan(){ 
+	console.log("Tombol diklik"); // BUAT CEK
+	document.getElementById('opening').style.opacity='0'; 
+	setTimeout(()=>{
+		document.getElementById('opening').style.display='none'; 
+		document.getElementById('main-content').style.display='block'; 
+		document.getElementById('bg-music').play().catch(e=>console.log("Autoplay diblokir"));
+	},1000); 
+}
+function toggleMusic(){ let m=document.getElementById('bg-music'); let b=document.getElementById('music-btn'); if(m.paused){m.play(); b.innerHTML='<i class="fa-solid fa-music"></i>'} else{m.pause(); b.innerHTML='<i class="fa-solid fa-music-slash"></i>'} }
+
+const observer = new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show')})},{threshold:0.1});
+document.querySelectorAll('.fade').forEach(s=>observer.observe(s));
+
+const weddingDate = new Date("Aug 31, 2027 09:00:00").getTime();
+setInterval(()=>{ let d=weddingDate-new Date().getTime();
+	if(d > 0){
+		document.getElementById("hari").innerText=Math.floor(d/(1000*60*60*24));
+		document.getElementById("jam").innerText=Math.floor((d%(1000*60*60*24))/(1000*60*60));
+		document.getElementById("menit").innerText=Math.floor((d%(1000*60*60))/(1000*60));
+		document.getElementById("detik").innerText=Math.floor((d%(1000*60))/1000);
+	}
+},1000);
+
+const form=document.getElementById('ucapan-form'); 
+const listUcapan = document.getElementById('list-ucapan'); // DEKLARASI BENER
+let hadir=localStorage.getItem('hadir')?parseInt(localStorage.getItem('hadir')):0; 
+let tidakHadir=localStorage.getItem('tidakHadir')?parseInt(localStorage.getItem('tidakHadir')):0; 
+let semuaUcapan=localStorage.getItem('semuaUcapan')?JSON.parse(localStorage.getItem('semuaUcapan')):[];
+document.getElementById('hadir-count').innerText=hadir; 
+document.getElementById('tidak-hadir-count').innerText=tidakHadir; 
+tampilkanUcapan();
+
+form.addEventListener('submit',function(e){
+	e.preventDefault(); 
+	semuaUcapan.unshift({nama:document.getElementById('nama').value,ucapan:document.getElementById('ucapan').value,kehadiran:document.getElementById('kehadiran').value,tanggal:new Date().toLocaleString('id-ID')}); 
+	if(document.getElementById('kehadiran').value=='Hadir')hadir++; else tidakHadir++; 
+	localStorage.setItem('hadir',hadir); 
+	localStorage.setItem('tidakHadir',tidakHadir); 
+	localStorage.setItem('semuaUcapan',JSON.stringify(semuaUcapan)); 
+	document.getElementById('hadir-count').innerText=hadir; 
+	document.getElementById('tidak-hadir-count').innerText=tidakHadir; 
+	tampilkanUcapan(); 
+	form.reset(); 
+	alert('Terima kasih ❤️')
+});
+
+function tampilkanUcapan(){ 
+	listUcapan.innerHTML=''; // PAKE VARIABEL YANG BENER
+	semuaUcapan.forEach(item=>{
+		listUcapan.innerHTML+=`<div class="comment-box"><b>${item.nama}</b> - <span style="color:${item.kehadiran=='Hadir'?'#3D9A62':'#d90a11'}"><i class="fa-solid fa-${item.kehadiran=='Hadir'?'check':'xmark'}"></i> ${item.kehadiran}</span><small style="float:right">${item.tanggal}</small><br>${item.ucapan}</div>`;
+	});
+}
+</script>
+</body>
+</html>
